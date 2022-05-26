@@ -1,20 +1,113 @@
+import React from "react";
+import { RootTabScreenProps } from "../types";
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "../components/Themed";
 import { Copyrights } from "../components/Copyrights";
 import {
   Image,
   StyleSheet,
-  TextInput,
-  Button,
+  TouchableOpacity,
   Platform,
+  Alert,
+  Button,
   SafeAreaView,
+  ScrollView,
+  TextInput,
 } from "react-native";
-import { RootTabScreenProps } from "../types";
-import React from "react";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
+import { ActivityIndicator, FlatList } from "react-native";
 
 export default function TabFourScreen({
   navigation,
 }: RootTabScreenProps<"Wallet">) {
+  const [isLoading, setLoading] = useState(true);
+
+  const [testADAs, setTestADAs] = useState([]);
+  const [testEpoch, setTestEpoch] = useState([]);
+  const [testBlock, setTestBlock] = useState([]);
+  const [testPool, setTestPool] = useState([]);
+  const [testPoolHistory, setPoolHistory] = useState([]);
+
+  const getADAs = async () => {
+    try {
+      const response = await fetch("https://127.0.0.1:5000/stake");
+      const json = await response.json();
+
+      setTestADAs(json.lovelace);
+    } catch (error) {
+      console.log("askiiiiiiiiii");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getEpochs = async () => {
+    try {
+      const response = await fetch("https://127.0.0.1:5000/epoch");
+      const json = await response.json();
+
+      setTestEpoch(json.epoch);
+    } catch (error) {
+      console.log("error epoch");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getBlock = async () => {
+    try {
+      const response = await fetch("https://127.0.0.1:5000/block");
+      const json = await response.json();
+
+      setTestBlock(json.block);
+    } catch (error) {
+      console.log("error block");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getPool = async () => {
+    try {
+      const response = await fetch("https://127.0.0.1:5000/pool");
+      const json = await response.json();
+
+      setTestPool(json.blocks_minted);
+    } catch (error) {
+      console.log("error blocks_minted");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getPoolHistory = async () => {
+    try {
+      const response = await fetch("https://127.0.0.1:5000/poolhistory");
+      const json = await response.json();
+
+      setPoolHistory(json.active_stake);
+    } catch (error) {
+      console.log("error active_stake");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getADAs();
+	getEpochs();
+	getBlock();
+	getPool();
+	getPoolHistory();
+  }, []);
+
   return (
     <View style={styles.container} lightColor="#eee" darkColor="#eee">
       <Image
@@ -22,20 +115,25 @@ export default function TabFourScreen({
         resizeMode="stretch"
         source={require("../assets/images/cardanocoin.png")}
       />
-      <Text style={styles.title}>Registrar Wallet</Text>
+      <Text style={styles.title}>Staking-Pool ORION</Text>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.subtitle}>Nombre de la billetera:</Text>
-        <TextInput style={styles.loginbox} placeholder="SilentBob" />
-        <Text style={styles.subtitle}>Contraseña de gastos:</Text>
-        <TextInput style={styles.loginbox} secureTextEntry={true} />
-        <Text style={styles.subtitle2}>Repetir contraseña de gastos:</Text>
-        <TextInput style={styles.loginbox} secureTextEntry={true} />
-        <Button
-          onPress={() => confirm("Esto es un WIP, por favor se paciente")}
-          title="Registrar"
-          color="#4c55ad"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <ScrollView style={styles.scrollView}>
+          <Text style={styles.subtitle}>
+            TestADAs actualmente en nuestra pool: {testADAs}
+          </Text>
+		  <Text style={styles.subtitle}>
+            Epoch actual: {testEpoch}
+          </Text>
+		  <Text style={styles.subtitle}>
+            Bloque actual: {testBlock}
+          </Text>
+		  <Text style={styles.subtitle}>
+            Bloques acuñados: {testPool}
+          </Text>
+		  <Text style={styles.subtitle}>
+            Active stake: {testPoolHistory}
+          </Text>
+        </ScrollView>
       </SafeAreaView>
       <Copyrights></Copyrights>
       <StatusBar style={Platform.OS === "ios" ? "dark" : "auto"} />
@@ -46,44 +144,53 @@ export default function TabFourScreen({
 }
 
 const styles = StyleSheet.create({
-  loginbox: {
-    height: 25,
-    width: 150,
-    borderColor: "gray",
-    borderWidth: 1,
-    marginBottom: 10,
-  },
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     paddingTop: "1%",
   },
+  scrollView: {
+    marginHorizontal: 20,
+  },
   title: {
     fontSize: 30,
+    color: "black",
     fontWeight: "bold",
     marginBottom: "1%",
     textAlign: "center",
   },
   subtitle: {
     fontSize: 15,
+    color: "black",
     fontWeight: "normal",
     backgroundColor: "#eee",
     alignItems: "center",
+    justifyContent: "center",
     marginRight: "1%",
     marginLeft: "1%",
     marginTop: 10,
-	marginBottom: 5,
+    flex: 1,
   },
-  subtitle2: {
-    fontSize: 15,
+  subtitle_link: {
+    fontSize: 18,
     fontWeight: "normal",
-	marginTop: 10,
-    marginBottom: 5,
+    color: "blue",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: "1%",
+    marginLeft: "2%",
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: "80%",
+  },
+  buttonStyle: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    width: "100%",
+    marginTop: 16,
   },
 });

@@ -1,11 +1,6 @@
 import { Text, TextProps } from "./Themed";
 import * as React from "react";
-import {
-  View,
-  Linking,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Linking, Image, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 import { Platform } from "react-native";
 
@@ -45,7 +40,7 @@ export function Copyrights(props: TextProps) {
           </TouchableOpacity>{" "}
           <TouchableOpacity
             onPress={() => {
-              Linking.openURL("https://github.com/agonzalezpascual/CTeam-App/");
+              Linking.openURL("https://github.com/cteam-cardano/");
             }}
           >
             <Image
@@ -76,7 +71,7 @@ export function Copyrights(props: TextProps) {
 
 const styles = StyleSheet.create({
   movil: {
-    flex: 0.2,
+    flex: 0.155,
     justifyContent: "center",
     textAlign: "center",
     left: 0,
@@ -84,11 +79,11 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   web: {
-    flex: 0.2,
+    flex: 0.20,
     justifyContent: "center",
     textAlign: "center",
     left: 0,
     right: 0,
-    bottom: 0,
+    bottom: 2,
   },
 });

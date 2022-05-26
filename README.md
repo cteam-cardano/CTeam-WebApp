@@ -63,8 +63,6 @@ expo start # si queremos usar directamente el comando de expo
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -91,12 +89,9 @@ expo start # si queremos usar directamente el comando de expo
   </ol>
 </details>
 
-
 ## About The Project
 The ORION project seeks to create a service as accessible as possible, with its own wallet, easy to use and intuitive.
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -109,7 +104,6 @@ The ORION project seeks to create a service as accessible as possible, with its 
 * [Haskell](https://www.haskell.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 # Getting Started
 
