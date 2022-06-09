@@ -121,7 +121,7 @@ export default function TabFourScreen({
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
           <Text style={styles.subtitle}>
-            Orion es la pool mas mejón de la red Cardano.
+            UNDER CONSTRUCTION!
           </Text>
 
           <TextInput

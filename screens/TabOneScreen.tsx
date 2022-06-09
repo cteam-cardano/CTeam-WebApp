@@ -1,3 +1,4 @@
+
 import EditScreenInfo from "../components/EditScreenInfo";
 import { StatusBar } from "expo-status-bar";
 import { View } from "../components/Themed";
@@ -14,9 +15,11 @@ import {
 import { RootTabScreenProps } from "../types";
 import React from "react";
 
+
 export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<"Home">) {
+  
   return (
     <View style={styles.container} lightColor="#eee" darkColor="#eee">
       <Image
@@ -52,14 +55,6 @@ export default function TabOneScreen({
             {"\n"}
           </Text>
 
-          <Text
-            style={styles.subtitle_link}
-            onPress={() => {
-              Linking.openURL("http://localhost:19006/orionpool");
-            }}
-          >
-            Orion Staking-Pool{"\n"}
-          </Text>
         </ScrollView>
       </SafeAreaView>
       <Copyrights></Copyrights>

@@ -11,6 +11,8 @@ npm start # si nos gusta usar npm
 yarn start # si preferimos usar yarn
 expo start # si queremos usar directamente el comando de expo
 
+BUILD APK: expo build:android -t apk
+https://expo.dev/artifacts/236a8c29-115a-4bb5-ae08-6bc7306648dd
 
 <div id="top"></div>
 <!-- PROJECT SHIELDS -->
