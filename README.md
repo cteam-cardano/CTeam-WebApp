@@ -1,4 +1,4 @@
-# CTeam-App
+# CTeam-WebApp
 Repositorio de la aplicación:
 npx react-native start
 npx react-native run-android
@@ -25,43 +25,43 @@ https://expo.dev/artifacts/236a8c29-115a-4bb5-ae08-6bc7306648dd
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/agonzalezpascual/CTeam-App.svg?style=for-the-badge
-[contributors-url]: https://github.com/agonzalezpascual/Best-README-Template/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/cteam-cardano/CTeam-WebApp.svg?style=for-the-badge
+[contributors-url]: https://github.com/cteam-cardano/Best-README-Template/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/agonzalezpascual/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/agonzalezpascual/Best-README-Template/network/members
+[forks-shield]: https://img.shields.io/github/forks/cteam-cardano/Best-README-Template.svg?style=for-the-badge
+[forks-url]: https://github.com/cteam-cardano/Best-README-Template/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/agonzalezpascual/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/agonzalezpascual/Best-README-Template/stargazers
+[stars-shield]: https://img.shields.io/github/stars/cteam-cardano/Best-README-Template.svg?style=for-the-badge
+[stars-url]: https://github.com/cteam-cardano/Best-README-Template/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/agonzalezpascual/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/agonzalezpascual/Best-README-Template/issues
+[issues-shield]: https://img.shields.io/github/issues/cteam-cardano/Best-README-Template.svg?style=for-the-badge
+[issues-url]: https://github.com/cteam-cardano/Best-README-Template/issues
 
-[license-shield]: https://img.shields.io/github/license/agonzalezpascual/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/agonzalezpascual/Best-README-Template/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/cteam-cardano/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/cteam-cardano/Best-README-Template/blob/master/LICENSE.txt
 
 [product-screenshot]: assets/images/cardanocoin.png
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/agonzalezpascual/CTeam-App">
+  <a href="https://github.com/cteam-cardano/CTeam-WebApp">
     <img src="assets/images/cardanocoin.png" alt="Logo" width="180" height="200">
   </a>
 
-<h3 align="center">CTeam-App</h3>
+<h3 align="center">CTeam-WebApp</h3>
 
   <p align="center">
     React Native cross-platform application/web focused on simplicity.
     <br />
-    <a href="https://github.com/agonzalezpascual/CTeam-App"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/cteam-cardano/CTeam-WebApp"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/agonzalezpascual/CTeam-App">View Demo</a>
+    <a href="https://github.com/cteam-cardano/CTeam-WebApp">View Demo</a>
     ·
-    <a href="https://github.com/agonzalezpascual/CTeam-App/issues">Report Bug</a>
+    <a href="https://github.com/cteam-cardano/CTeam-WebApp/issues">Report Bug</a>
     ·
-    <a href="https://github.com/agonzalezpascual/CTeam-App/issues">Request Feature</a>
+    <a href="https://github.com/cteam-cardano/CTeam-WebApp/issues">Request Feature</a>
   </p>
 </div>
 
@@ -191,7 +191,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/agonzalezpascual/CTeam-App](https://github.com/agonzalezpascual/CTeam-App)
+Project Link: [https://github.com/cteam-cardano/CTeam-WebApp](https://github.com/cteam-cardano/CTeam-WebApp)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
