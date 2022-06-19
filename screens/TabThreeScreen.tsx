@@ -28,7 +28,8 @@ export default function TabThreeScreen({
 
   const getADAs = async () => {
     try {
-      const response = await fetch("https://127.0.0.1:5000/stake");
+      //const response = await fetch("https://127.0.0.1:5000/stake");
+      const response = await fetch("https://cteamapicardano.herokuapp.com/stake");
       const json = await response.json();
 
       setTestADAs(json.lovelace);
@@ -42,7 +43,8 @@ export default function TabThreeScreen({
 
   const getEpochs = async () => {
     try {
-      const response = await fetch("https://127.0.0.1:5000/epoch");
+      //const response = await fetch("https://127.0.0.1:5000/epoch");
+      const response = await fetch("https://cteamapicardano.herokuapp.com/epoch");
       const json = await response.json();
 
       setTestEpoch(json.epoch);
@@ -56,7 +58,8 @@ export default function TabThreeScreen({
 
   const getBlock = async () => {
     try {
-      const response = await fetch("https://127.0.0.1:5000/block");
+      //const response = await fetch("https://127.0.0.1:5000/block");
+      const response = await fetch("https://cteamapicardano.herokuapp.com/block");
       const json = await response.json();
 
       setTestBlock(json.block);
@@ -70,7 +73,8 @@ export default function TabThreeScreen({
 
   const getPool = async () => {
     try {
-      const response = await fetch("https://127.0.0.1:5000/pool");
+      //const response = await fetch("https://127.0.0.1:5000/pool");
+      const response = await fetch("https://cteamapicardano.herokuapp.com/pool");
       const json = await response.json();
 
       setTestPool(json.blocks_minted);
@@ -82,9 +86,10 @@ export default function TabThreeScreen({
     }
   };
 
-  const getPoolHistory = async () => {
+  /*const getPoolHistory = async () => {
     try {
-      const response = await fetch("https://127.0.0.1:5000/poolhistory");
+      //const response = await fetch("https://127.0.0.1:5000/poolhistory");
+      const response = await fetch("https://cteamapicardano.herokuapp.com/poolhistory");
       const json = await response.json();
 
       setPoolHistory(json.active_stake);
@@ -94,14 +99,14 @@ export default function TabThreeScreen({
     } finally {
       setLoading(false);
     }
-  };
+  };*/
 
   useEffect(() => {
     getADAs();
     getEpochs();
     getBlock();
     getPool();
-    getPoolHistory();
+    //getPoolHistory();
   }, []);
 
   return (
@@ -220,10 +225,6 @@ export default function TabThreeScreen({
             <Text style={{ fontWeight: "bold", color: "black" }}>{testPool}</Text>
           </Text>
 
-          <Text style={styles.subtitle}>
-		  <Text style={{color: "black"}}>Active stake: </Text>
-            <Text style={{ fontWeight: "bold", color: "black" }}>{testPoolHistory}</Text>
-          </Text>
         </ScrollView>
       </SafeAreaView>
 
